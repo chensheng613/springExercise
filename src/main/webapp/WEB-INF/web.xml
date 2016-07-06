@@ -10,6 +10,7 @@
 		<param-value>
 				classpath*:/applicationContext.xml,
 				classpath*:/applicationContext-shiro.xml
+				classpath*:/spring-mybatis.xml
 		</param-value>
 	</context-param>
 	<context-param>
