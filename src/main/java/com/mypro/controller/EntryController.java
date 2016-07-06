@@ -1,4 +1,4 @@
-package com.mypro.controller;
+/*package com.mypro.controller;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -26,7 +26,7 @@ import com.mypro.Util.WeChat.WXBizMsgCrypt;
 @RequestMapping("/weChat")
 public class EntryController {
 
-	/** 接入微信后台 */
+	*//** 接入微信后台 *//*
 	@RequestMapping(value = { "/weChatEntry" }, method = { RequestMethod.GET })
 	public void coreEntry(HttpServletRequest request,
 			HttpServletResponse reponse) {
@@ -116,4 +116,4 @@ public class EntryController {
 			}
 		}
 	}
-}
+}*/
