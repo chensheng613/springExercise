@@ -2,16 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.jksb.land</groupId>
-	<artifactId>land</artifactId>
+	<groupId>com.mypro</groupId>
+	<artifactId>springExercise</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
-	<name>com :: jksb :: land</name>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.3.5.RELEASE</version>
-	</parent>
+	<name>com :: mypro :: springExercise</name>
 	<properties>
 		<!-- 主要依赖库的版本定义 -->
 		<springside.version>4.2.3-GA</springside.version>
@@ -60,11 +55,6 @@
 	<!-- 依赖项定义 -->
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpcore</artifactId>
 			<version>4.2.4</version>
@@ -112,7 +102,7 @@
 		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
-			<version>3.2.1</version>
+			<version>${commons-collections.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mod4j.org.apache.commons</groupId>
@@ -265,7 +255,7 @@
 			<version>3.0.1</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- WEB end -->
+ 		<!-- WEB end -->
 
 		<!-- JACOB is a JAVA-COM Bridge that allows you to call COM Automation 
 			components from Java. -->
@@ -323,14 +313,26 @@
 		</dependency>
 
 		<!-- 代码直接调用log4j会被桥接到slf4j -->
-		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>log4j-over-slf4j</artifactId> 
-			<version>${slf4j.version}</version> <scope>runtime</scope> </dependency> -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>runtime</scope>
+		</dependency>
 		<!-- 代码直接调用common-logging会被桥接到slf4j -->
-		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>jcl-over-slf4j</artifactId> 
-			<version>${slf4j.version}</version> <scope>runtime</scope> </dependency> -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>runtime</scope>
+		</dependency>
 		<!-- 代码直接调用java.util.logging会被桥接到slf4j -->
-		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>jul-to-slf4j</artifactId> 
-			<version>${slf4j.version}</version> <scope>runtime</scope> </dependency> -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>runtime</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>com.googlecode.log4jdbc</groupId>
@@ -461,20 +463,20 @@
 			<artifactId>spring-test</artifactId>
 		</dependency>
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-ibatis</artifactId>
-		    <version>2.0.8</version>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.4.1</version>
 		</dependency>
 		<dependency>
-			  <groupId>org.mybatis</groupId>
-			  <artifactId>mybatis</artifactId>
-			  <version>3.4.1</version>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.3.0</version>
 		</dependency>
-		<dependency>
-    <groupId>org.mybatis</groupId>
-    <artifactId>mybatis-spring</artifactId>
-    <version>1.3.0</version>
-	</dependency>
+<!-- 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency> -->
 	</dependencies>
 
 	<dependencyManagement>
@@ -498,6 +500,4 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-
 </project>
