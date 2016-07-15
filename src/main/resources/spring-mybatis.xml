@@ -27,7 +27,7 @@
 	<import resource="classpath*:/dataSource.xml" />
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
-		<property name="mapperLocations" value="com.mypro.ibatis.dao" />
+		<property name="mapperLocations" value="classpath:/mapping/*.xml" />
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.mypro.ibatis.mapper"></property>

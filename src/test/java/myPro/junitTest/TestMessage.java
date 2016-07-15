@@ -1,4 +1,4 @@
-package myPro.junitTest;
+/*package myPro.junitTest;
 
 import javax.jms.Destination;
 
@@ -47,7 +47,7 @@ public class TestMessage {
 			messageTopicProducer.sendMessageToTopic(notifyTopic, msg);
 		}
 	}
-/*	@Test
+	@Test
 	public void testConsume() {
 		List<TextMessage> list = messageConsumer.receiveMsg(notifyQueue);
 		for (TextMessage textMessage : list) {
@@ -60,5 +60,6 @@ public class TestMessage {
 				e.printStackTrace();
 			}
 		}
-	}*/
+	}
 }
+*/
