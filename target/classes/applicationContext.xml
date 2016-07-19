@@ -28,7 +28,7 @@
 		http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
 		http://www.springframework.org/schema/task 
 		http://www.springframework.org/schema/task/spring-task-3.0.xsd
-		 http://www.springframework.org/schema/jms
+		http://www.springframework.org/schema/jms
         http://www.springframework.org/schema/jms/spring-jms-4.0.xsd
         http://activemq.apache.org/schema/core
         http://activemq.apache.org/schema/core/activemq-core-5.8.0.xsd">
@@ -101,90 +101,68 @@
 
 	<!-- activeMQ -->
 	<!-- MQ连接配置 -->
-	<!-- <bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory"
-		destroy-method="stop">
-		<property name="connectionFactory">
-			<bean class="org.apache.activemq.ActiveMQConnectionFactory">
-				<property name="brokerURL">
-					<value>tcp://localhost:61616</value>
-				</property>
-			</bean>
-		</property>
-	</bean> -->
+	<!-- <bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory" 
+		destroy-method="stop"> <property name="connectionFactory"> <bean class="org.apache.activemq.ActiveMQConnectionFactory"> 
+		<property name="brokerURL"> <value>tcp://localhost:61616</value> </property> 
+		</bean> </property> </bean> -->
 	<!-- Spring JMS Template -->
-	<!-- <bean id="myJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
-		<property name="connectionFactory">
-			<bean class="org.springframework.jms.connection.SingleConnectionFactory">
-				<property name="targetConnectionFactory" ref="jmsFactory" />
-			</bean>
-		</property>
-		<property name="receiveTimeout" value="60000"></property>
-	</bean> -->
+	<!-- <bean id="myJmsTemplate" class="org.springframework.jms.core.JmsTemplate"> 
+		<property name="connectionFactory"> <bean class="org.springframework.jms.connection.SingleConnectionFactory"> 
+		<property name="targetConnectionFactory" ref="jmsFactory" /> </bean> </property> 
+		<property name="receiveTimeout" value="60000"></property> </bean> -->
 
 	<!-- 配置消息发送目的地方式 Queue队列：仅有一个订阅者会收到消息，消息一旦被处理就不会存在队列中 -->
-<!-- 	<bean id="notifyQueue" class="org.apache.activemq.command.ActiveMQQueue">
-		<constructor-arg value="testQueue"></constructor-arg>
-	</bean> -->
+	<!-- <bean id="notifyQueue" class="org.apache.activemq.command.ActiveMQQueue"> 
+		<constructor-arg value="testQueue"></constructor-arg> </bean> -->
 
 	<!-- 配置消息发送目的方式是主题 -->
-	<!-- <bean id="notifyTopic" class="org.apache.activemq.command.ActiveMQTopic">
-		<constructor-arg value="testTopic"></constructor-arg>
-	</bean> -->
+	<!-- <bean id="notifyTopic" class="org.apache.activemq.command.ActiveMQTopic"> 
+		<constructor-arg value="testTopic"></constructor-arg> </bean> -->
 
 	<!-- 使用Spring JmsTemplate 的消息生产者 -->
-	<!-- <bean id="messageProducer" class="com.mypro.activeMQ.MessageProducer">
-		<property name="myJmsTemplate" ref="myJmsTemplate" />
-		<property name="notifyQueue" ref="notifyQueue" />
-	</bean> -->
+	<!-- <bean id="messageProducer" class="com.mypro.activeMQ.MessageProducer"> 
+		<property name="myJmsTemplate" ref="myJmsTemplate" /> <property name="notifyQueue" 
+		ref="notifyQueue" /> </bean> -->
 
 	<!-- 主题队列消息生产者 -->
-	<!-- <bean id="topicMessageProducer" class="com.mypro.activeMQ.MessageTopicProducer">
-		<property name="myJmsTemplate" ref="myJmsTemplate"></property>
-		<property name="notifyTopic" ref="notifyTopic"></property>
-	</bean> -->
+	<!-- <bean id="topicMessageProducer" class="com.mypro.activeMQ.MessageTopicProducer"> 
+		<property name="myJmsTemplate" ref="myJmsTemplate"></property> <property 
+		name="notifyTopic" ref="notifyTopic"></property> </bean> -->
 
 	<!-- 队列消息消费者 -->
-	<!-- <bean id="messageConsumer" class="com.mypro.activeMQ.MessageConsumer">
-		<property name="myJmsTemplate" ref="myJmsTemplate" />
-	</bean> -->
+	<!-- <bean id="messageConsumer" class="com.mypro.activeMQ.MessageConsumer"> 
+		<property name="myJmsTemplate" ref="myJmsTemplate" /> </bean> -->
 
 	<!-- 消息消费者 一般使用spring的MDP异步接收Queue模式 消息监听容器 -->
-	<!-- <bean id="queueContainer"
-		class="org.springframework.jms.listener.DefaultMessageListenerContainer">
-		<property name="connectionFactory" ref="jmsFactory"></property>
-		<property name="destination" ref="notifyQueue"></property>
-		<property name="messageListener" ref="queueMessageListener"></property>
-	</bean>
-	<bean id="queueContainer2"
-		class="org.springframework.jms.listener.DefaultMessageListenerContainer">
-		<property name="connectionFactory" ref="jmsFactory"></property>
-		<property name="destination" ref="notifyQueue"></property>
-		<property name="messageListener" ref="queueMessageListener2"></property>
-	</bean> -->
+	<!-- <bean id="queueContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer"> 
+		<property name="connectionFactory" ref="jmsFactory"></property> <property 
+		name="destination" ref="notifyQueue"></property> <property name="messageListener" 
+		ref="queueMessageListener"></property> </bean> <bean id="queueContainer2" 
+		class="org.springframework.jms.listener.DefaultMessageListenerContainer"> 
+		<property name="connectionFactory" ref="jmsFactory"></property> <property 
+		name="destination" ref="notifyQueue"></property> <property name="messageListener" 
+		ref="queueMessageListener2"></property> </bean> -->
 	<!-- 监听者 -->
-	<!-- <bean id="queueMessageListener" class="com.mypro.activeMQ.QueueMessageListener"></bean>
-	<bean id="queueMessageListener2" class="com.mypro.activeMQ.QueueMessageListener2"></bean> -->
+	<!-- <bean id="queueMessageListener" class="com.mypro.activeMQ.QueueMessageListener"></bean> 
+		<bean id="queueMessageListener2" class="com.mypro.activeMQ.QueueMessageListener2"></bean> -->
 
 	<!-- 主题监听 -->
-	<!-- <bean id="topicContainer"
-		class="org.springframework.jms.listener.DefaultMessageListenerContainer">
-		<property name="connectionFactory" ref="jmsFactory"></property>
-		<property name="destination" ref="notifyTopic"></property>
-		<property name="messageListener" ref="topicMessageListener"></property>
-	</bean>
-	<bean id="topicContainer2"
-		class="org.springframework.jms.listener.DefaultMessageListenerContainer">
-		<property name="connectionFactory" ref="jmsFactory"></property>
-		<property name="destination" ref="notifyTopic"></property>
-		<property name="messageListener" ref="topicMessageListener2"></property>
-	</bean> -->
-<!-- 	<jms:listener-container destination-type="topic"
-		connection-factory="jmsFactory" acknowledge="auto" container-type="default">
-		<jms:listener destination="notifyTopic" ref="topicMessageListener" />
-		<jms:listener destination="notifyTopic" ref="topicMessageListener2" />
-	</jms:listener-container> -->
+	<!-- <bean id="topicContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer"> 
+		<property name="connectionFactory" ref="jmsFactory"></property> <property 
+		name="destination" ref="notifyTopic"></property> <property name="messageListener" 
+		ref="topicMessageListener"></property> </bean> <bean id="topicContainer2" 
+		class="org.springframework.jms.listener.DefaultMessageListenerContainer"> 
+		<property name="connectionFactory" ref="jmsFactory"></property> <property 
+		name="destination" ref="notifyTopic"></property> <property name="messageListener" 
+		ref="topicMessageListener2"></property> </bean> -->
+	<!-- <jms:listener-container destination-type="topic" connection-factory="jmsFactory" 
+		acknowledge="auto" container-type="default"> <jms:listener destination="notifyTopic" 
+		ref="topicMessageListener" /> <jms:listener destination="notifyTopic" ref="topicMessageListener2" 
+		/> </jms:listener-container> -->
 	<!-- 监听者 -->
-	<!-- <bean id="topicMessageListener" class="com.mypro.activeMQ.TopicMessageListener"></bean>
-	<bean id="topicMessageListener2" class="com.mypro.activeMQ.TopicMessageListener2"></bean> -->
-
+	<!-- <bean id="topicMessageListener" class="com.mypro.activeMQ.TopicMessageListener"></bean> 
+		<bean id="topicMessageListener2" class="com.mypro.activeMQ.TopicMessageListener2"></bean> -->
+	
+	<bean id="helloWorldService" class="com.mypro.webservice.HelloWorldService"></bean>
+	
 </beans>
