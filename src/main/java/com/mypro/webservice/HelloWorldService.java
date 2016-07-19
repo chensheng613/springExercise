@@ -10,6 +10,6 @@ public class HelloWorldService implements HelloInf{
 	}
 
 	public String sayToHello(String name) {
-		return "hello"+name;
+		return name;
 	}
 }
