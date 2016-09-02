@@ -145,11 +145,11 @@
 			<version>1.10</version>
 		</dependency>
 		<!-- SPRINGSIDE -->
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.springside</groupId>
 			<artifactId>springside-core</artifactId>
 			<version>${springside.version}</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- PERSISTENCE begin -->
 		<!-- hibernate -->
@@ -366,13 +366,13 @@
 		<!-- GENERAL UTILS end -->
 
 		<!-- TEST begin -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.springside</groupId>
 			<artifactId>springside-core</artifactId>
 			<version>${springside.version}</version>
 			<classifier>tests</classifier>
 			<scope>test</scope>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -586,7 +586,7 @@
 			<source>1.7</source> <target>1.7</target> </configuration> </plugin> </plugins> 
 			</pluginManagement> -->
 		<plugins>
-			<plugin>
+<!-- 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>jaxb2-maven-plugin</artifactId>
 				<version>1.6</version>
@@ -604,7 +604,7 @@
 					<packageName>com.mypro.myschema</packageName>
 					<clearOutputDir>false</clearOutputDir>
 				</configuration>
-			</plugin>
+			</plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-archetype-plugin</artifactId>
