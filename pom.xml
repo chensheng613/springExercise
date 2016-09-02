@@ -569,6 +569,16 @@
 			<version>${axis2.version}</version>
 		</dependency>
 		<!-- axis end -->
+		<dependency>
+			<groupId>org.jibx</groupId>
+			<artifactId>jibx-bind</artifactId>
+			<version>1.2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jibx</groupId>
+			<artifactId>jibx-tools</artifactId>
+			<version>1.2.6</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<!-- <pluginManagement> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> 
