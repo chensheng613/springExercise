@@ -66,6 +66,16 @@
 			<artifactId>netty-all</artifactId>
 			<version>5.0.0.Alpha2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-redis</artifactId>
+			<version>1.7.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>4.3.2.RELEASE</version>
+		</dependency>
 		<!-- activeMQ -->
 
 		<!-- <dependency> <groupId>org.apache.activemq</groupId> <artifactId>activemq-broker</artifactId> 
@@ -145,11 +155,8 @@
 			<version>1.10</version>
 		</dependency>
 		<!-- SPRINGSIDE -->
-	<!-- 	<dependency>
-			<groupId>org.springside</groupId>
-			<artifactId>springside-core</artifactId>
-			<version>${springside.version}</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.springside</groupId> <artifactId>springside-core</artifactId> 
+			<version>${springside.version}</version> </dependency> -->
 
 		<!-- PERSISTENCE begin -->
 		<!-- hibernate -->
@@ -366,13 +373,9 @@
 		<!-- GENERAL UTILS end -->
 
 		<!-- TEST begin -->
-<!-- 		<dependency>
-			<groupId>org.springside</groupId>
-			<artifactId>springside-core</artifactId>
-			<version>${springside.version}</version>
-			<classifier>tests</classifier>
-			<scope>test</scope>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.springside</groupId> <artifactId>springside-core</artifactId> 
+			<version>${springside.version}</version> <classifier>tests</classifier> <scope>test</scope> 
+			</dependency> -->
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -586,25 +589,11 @@
 			<source>1.7</source> <target>1.7</target> </configuration> </plugin> </plugins> 
 			</pluginManagement> -->
 		<plugins>
-<!-- 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>jaxb2-maven-plugin</artifactId>
-				<version>1.6</version>
-				<executions>
-					<execution>
-						<id>xjc</id>
-						<goals>
-							<goal>xjc</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory>
-					<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
-					<packageName>com.mypro.myschema</packageName>
-					<clearOutputDir>false</clearOutputDir>
-				</configuration>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>jaxb2-maven-plugin</artifactId> 
+				<version>1.6</version> <executions> <execution> <id>xjc</id> <goals> <goal>xjc</goal> 
+				</goals> </execution> </executions> <configuration> <schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory> 
+				<outputDirectory>${project.basedir}/src/main/java</outputDirectory> <packageName>com.mypro.myschema</packageName> 
+				<clearOutputDir>false</clearOutputDir> </configuration> </plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-archetype-plugin</artifactId>

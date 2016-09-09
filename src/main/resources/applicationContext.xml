@@ -7,6 +7,7 @@
 	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:cache="http://www.springframework.org/schema/cache"
 	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
 	xmlns:amq="http://activemq.apache.org/schema/core" xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
@@ -31,7 +32,9 @@
 		http://www.springframework.org/schema/jms
         http://www.springframework.org/schema/jms/spring-jms-4.0.xsd
         http://activemq.apache.org/schema/core
-        http://activemq.apache.org/schema/core/activemq-core-5.8.0.xsd">
+        http://activemq.apache.org/schema/core/activemq-core-5.8.0.xsd
+        http://www.springframework.org/schema/websocket
+        http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 	<import resource="classpath*:/dataSource.xml" />
 	<!-- 使用annotation 自动注册bean, 并保证@Required、@Autowired的属性被注入 -->
 	<context:component-scan base-package="com.mypro">
@@ -165,4 +168,11 @@
 	
 	<bean id="helloWorldService" class="com.mypro.webservice.HelloWorldService"></bean>
 	
+	<websocket:handlers>
+	    <websocket:mapping path="/websocket" handler="myHandler"/>
+	    <websocket:handshake-interceptors>
+	        <bean class="com.mypro.springWebSocket.MyHandShake"></bean>
+	    </websocket:handshake-interceptors>
+	</websocket:handlers>
+	<bean id="myHandler" class="com.mypro.springWebSocket.MyHandler"></bean>
 </beans>
